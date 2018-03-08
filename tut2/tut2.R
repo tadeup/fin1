@@ -1,6 +1,6 @@
 library(readxl)
 library(dplyr)
-setwd("C:\\Users\\tadeu\\Desktop\\FGV\\semestre 7\\fin 1\\tut2")
+setwd("C:\\Users\\tadeu\\Desktop\\FGV\\semestre 7\\fin 1\\tuts\\tut2")
 
 df <- data.frame(
   read_excel("abev3_2016.xlsx", col_names = F)[,2] %>% ts(),
@@ -62,7 +62,8 @@ covMat <- cov(returns.data)
 port <- portfolio.spec(assets = c("ambev3","bbas3","bbdc4","brfs3","bvmf3","itsa4","itub4","petr3","petr4"))
 
 # Box
-port <- add.constraint(port, type = "box", min = 0.05, max = 0.8)
+# define peso minimo e maximo dos ativos no portfolio
+#port <- add.constraint(port, type = "box", min = 0.05, max = 0.8)
 
 # Leverage
 port <- add.constraint(portfolio = port, type = "full_investment")
