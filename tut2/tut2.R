@@ -63,7 +63,7 @@ port <- portfolio.spec(assets = c("ambev3","bbas3","bbdc4","brfs3","bvmf3","itsa
 
 # Box
 # define peso minimo e maximo dos ativos no portfolio
-#port <- add.constraint(port, type = "box", min = 0.05, max = 0.8)
+port <- add.constraint(port, type = "box", min = 0.05, max = 0.8)
 
 # Leverage
 port <- add.constraint(portfolio = port, type = "full_investment")
